@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #include "../Board/Board.h"
 #include "../Builders/TaxiBoardBuilder.h"
 #include "../Driver/TaxiDriver.h"
@@ -9,5 +11,5 @@
 class BoardDirector
 {
 public:
-    Board SomeTaxiBoard(BoardBuilder* tbb);
+    Board SomeTaxiBoard(std::shared_ptr<BoardBuilder> tbb);
 };

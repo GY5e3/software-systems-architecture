@@ -1,6 +1,6 @@
 #include "BoardDirector.h"
 
-Board BoardDirector::SomeTaxiBoard(BoardBuilder* tbb)
+Board BoardDirector::SomeTaxiBoard(std::shared_ptr<BoardBuilder> tbb)
 {
     tbb->BuildDriver();
     tbb->BuildPassenger();

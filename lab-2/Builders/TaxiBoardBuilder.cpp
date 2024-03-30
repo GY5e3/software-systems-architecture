@@ -8,19 +8,19 @@ TaxiBoardBuilder::TaxiBoardBuilder()
 }
 
 void TaxiBoardBuilder::BuildDriver() {
-    if(board.p_driver != nullptr) {
+    if(board.driver != nullptr) {
         std::cout << "Not more than 1 driver into transport!" << std::endl;
         return;
     }
-    board.p_driver = new TaxiDriver;
+    board.driver = std::make_shared<TaxiDriver>();
 }
 void TaxiBoardBuilder::BuildPassenger() {
-    if(board.p_passengers.size() == board.MAX_SIZE) {
+    if(board.passengers.size() == board.MAX_SIZE) {
         std::cout << "ERROR: Trying to overload this taxi" << std::endl;
         return;
     }
-    TaxiPassenger passenger;
-    board.p_passengers.push_back(&passenger);
+    std::shared_ptr<Passenger> passenger = std::make_shared<TaxiPassenger>();
+    board.passengers.push_back(std::move(passenger));
 }
 void TaxiBoardBuilder::BuildBabySeat() {
     board.needBabySeat = true;

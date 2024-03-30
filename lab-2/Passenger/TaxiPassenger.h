@@ -6,9 +6,7 @@ class TaxiPassenger : public Passenger
 {
 public:
     TaxiPassenger();
-    TaxiPassenger(std::string name, PassengerType passengerType, bool needBabySeat);
+    TaxiPassenger(std::string name, PassengerType passengerType);
 
     std::string GetAllInformation() override;
-private:
-    bool p_needBabySeat;
 };

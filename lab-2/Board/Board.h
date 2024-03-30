@@ -1,15 +1,16 @@
 #pragma once
 
+#include <vector>
+#include <memory>
 
 #include "../Driver/Driver.h"
 #include "../Passenger/Passenger.h"
-#include "vector"
 
 class Board
 {
 public:
-    Driver *p_driver = nullptr;
+    std::shared_ptr<Driver> driver = nullptr;
     short MAX_SIZE;
-    std::vector<Passenger*> p_passengers;
+    std::vector<std::shared_ptr<Passenger>> passengers;
     bool needBabySeat;
 };
